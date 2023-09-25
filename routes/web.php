@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\CustomAuthController;
+
+Route::get('admin', [CustomAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin/login', [CustomAuthController::class, 'login']);
+
+// Routes that require authentication
+Route::middleware('admin')->group(function () {
+    Route::get('admin/home', function () {
+        return view('admin.home');
+    })->name('admin.home');
+});
