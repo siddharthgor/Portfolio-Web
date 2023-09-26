@@ -1,5 +1,3 @@
-// dd($settings);
-?>
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" data-bg-class="bg-menu-theme"
     style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
     <div class="app-brand demo">
@@ -8,12 +6,13 @@
                 <i class="bx bx-chevron-left bx-sm align-middle"></i>
             </a>
             <span class="app-brand-logo demo  store_logo d-none">
-                <img src="{{ asset('/img/avatars/7.png') }}" alt="user-avatar" class="d-block rounded" height="60px"
-                    width="180" id="uploadedAvatar" />
+                <img src="{{ asset('assets/img/avatars/vishal.png') }}" alt="user-avatar" class="m-lg-n2 rounded"
+                    height="80px" width="100px" id="uploadedAvatar" />
 
             </span>
             <span class="app-brand-logo d-flex half_logo image-box-100 justify-content-end ms-sm-n5 p-2">
-                <img src="" alt="user-avatar" class="d-block rounded" id="uploadedAvatar" />
+                <img src="{{ asset('assets/img/avatars/vishal.png') }}" alt="user-avatar"
+                    class="d-block m-lg-n2 rounded" id="uploadedAvatar" />
             </span>
             {{-- <span class="app-brand-text demo menu-text fw-bolder ms-2">{{ $settings['store_title'] }}</span> --}}
         </a>
@@ -33,19 +32,20 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
-        <li class="menu-item {{ Request::is('admin/plans') || Request::is('admin/plans/*') ? 'active' : '' }}">
-            <a href="/admin/plans"
-                class="menu-link {{ Request::is('admin/plans') || Request::is('admin/plans/*') ? 'active' : '' }}">
+        <li
+            class="menu-item {{ Request::is('admin/academic_performance') || Request::is('admin/academic_performance/*') ? 'active' : '' }}">
+            <a href="/admin/academic_performance"
+                class="menu-link {{ Request::is('admin/academic_performance') || Request::is('admin/performance/*') ? 'active' : '' }}">
                 <i class="menu-icon fas fa-book-open text-primary"></i>
-                <div>Plans</div>
+                <div>Academic Performance</div>
             </a>
         </li>
         <li
-            class="menu-item {{ Request::is('admin/subscriptions') || Request::is('admin/subscriptions/*') ? 'active' : '' }}">
-            <a href="/admin/subscriptions"
-                class="menu-link {{ Request::is('admin/subscriptions') || Request::is('admin/subscriptions/*') ? 'active' : '' }}">
-                <i class="menu-icon fas fa-bell text-secondary"></i>
-                <div>Subscriptions</div>
+            class="menu-item {{ Request::is('admin/workshops_conference') || Request::is('admin/workshops_conference/*') ? 'active' : '' }}">
+            <a href="/admin/workshops_conference"
+                class="menu-link {{ Request::is('admin/workshops_conference') || Request::is('admin/workshops_conference/*') ? 'active' : '' }}">
+                <i class="menu-icon fas fa-tasks text-secondary"></i>
+                <div>Workshops and Conference</div>
             </a>
         </li>
         <li
