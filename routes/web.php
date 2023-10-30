@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AcademicPerformanceController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\JournalPapersController;
 use App\Http\Controllers\Workshops_Conference_Controller;
 
 Route::get('admin', [CustomAuthController::class, 'showLoginForm'])->name('admin.login');
@@ -42,4 +44,17 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/workshops_conference/list', [Workshops_Conference_Controller::class, 'list'])->name('admin.workshops_conference.list');
     Route::get('admin/workshops_conference/create', [Workshops_Conference_Controller::class, 'create'])->name('workshops_conference.create');
     Route::post('admin/workshops_conference/store', [Workshops_Conference_Controller::class, 'store'])->name('workshops_conference.store');
+
+    //experience routes
+    Route::get('admin/experience', [ExperienceController::class, 'index'])->name('experience.index');
+    Route::get('admin/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
+    Route::post('admin/experience/store', [ExperienceController::class, 'store'])->name('experience.store');
+
+    // papers
+    //journal papers
+
+    Route::get('admin/papers/journal_papers', [JournalPapersController::class, 'index'])->name('journal_papers.index');
+    Route::get('admin/papers/journal_papers/list', [JournalPapersController::class, 'list'])->name('journal_papers.list');
+    Route::get('admin/papers/journal_papers/create', [JournalPapersController::class, 'create'])->name('journal_papers.create');
+    Route::post('admin/papers/journal_papers/store', [JournalPapersController::class, 'store'])->name('journal_papers.store');
 });

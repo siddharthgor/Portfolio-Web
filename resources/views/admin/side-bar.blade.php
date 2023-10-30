@@ -48,53 +48,41 @@
                 <div>Workshops and Conference</div>
             </a>
         </li>
-        <li
-            class="menu-item {{ Request::is('admin/transactions') || Request::is('admin/transactions/*') ? 'active' : '' }}">
-            <a href="/admin/transactions"
-                class="menu-link {{ Request::is('admin/transactions') || Request::is('admin/transactions/*') ? 'active' : '' }}">
-                <i class="menu-icon fas fa-money-bill text-danger"></i>
-                <div>Transactions</div>
+        <li class="menu-item {{ Request::is('admin/experience') || Request::is('admin/experience*') ? 'active' : '' }}">
+            <a href="/admin/experience"
+                class="menu-link {{ Request::is('admin/experience') || Request::is('admin/experience/*') ? 'active' : '' }}">
+                <i class="menu-icon fas fa-history text-danger"></i>
+                <div>Experience</div>
             </a>
         </li>
-        <li class="menu-item {{ Request::is('admin/partners') || Request::is('admin/partners/*') ? 'active' : '' }}">
-            <a href="/admin/partners"
-                class="menu-link {{ Request::is('admin/partners') || Request::is('admin/partners/*') ? 'active' : '' }}">
-                <i class="menu-icon fas fas fa-store text-info"></i>
-                <div>Partners</div>
-            </a>
-        </li>
-        <li
-            class="menu-item {{ Request::is('admin/settings') || Request::is('admin/settings/*') ? 'active open' : '' }}">
+
+        <li class="menu-item {{ Request::is('admin/papers') || Request::is('admin/papers/*') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon fas fa-gear text-primary"></i>
-                <div>Settings</div>
+                <i class="menu-icon fas fa-book text-primary"></i>
+                <div>Papers</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item {{ Request::is('admin/settings') ? 'active' : '' }}">
-                    <a href="/admin/settings" class="menu-link">
-                        <div data-i18n="Without menu">General</div>
+                <li class="menu-item {{ Request::is('admin/papers/journal_papers') ? 'active' : '' }}">
+                    <a href="/admin/papers/journal_papers" class="menu-link">
+                        <div data-i18n="Without menu">Journal Papers</div>
                     </a>
                 </li>
                 <li
-                    class="menu-item {{ Request::is('admin/settings/language') || Request::is('admin/settings/language/*') ? 'active' : '' }}">
-                    <a href="/admin/settings/language" class="menu-link">
-                        <div data-i18n="Without menu">Languages</div>
+                    class="menu-item {{ Request::is('admin/papers/conference_papers') || Request::is('admin/papers/conference_papers/*') ? 'active' : '' }}">
+                    <a href="/admin/papers/conference_papers" class="menu-link">
+                        <div data-i18n="Without menu">Conference Papers</div>
                     </a>
                 </li>
                 <li
-                    class="menu-item {{ Request::is('admin/settings/email_settings') || Request::is('admin/settings/email_settings/*') ? 'active' : '' }}">
-                    <a href="/admin/settings/email_settings" class="menu-link">
-                        <div data-i18n="Without menu">SMTP Settings</div>
+                    class="menu-item {{ Request::is('admin/papers/books_chapters') || Request::is('admin/papers/books_chapters/*') ? 'active' : '' }}">
+                    <a href="/admin/papers/books_chapters" class="menu-link">
+                        <div data-i18n="Without menu">Books and Chapters</div>
                     </a>
                 </li>
-                {{-- <li
-                    class="menu-item {{ Request::is('admin/settings/permissions') || Request::is('admin/settings/permissions/*') ? 'active' : '' }}">
-                    <a href="/admin/settings/permissions" class="menu-link">
-                        <div data-i18n="Without menu">Role Permissions</div>
-                    </a>
-                </li> --}}
+
             </ul>
         </li>
+
     </ul>
 
 </aside>
