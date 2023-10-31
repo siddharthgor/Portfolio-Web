@@ -1,4 +1,7 @@
 @extends('admin.layout')
+@section('title')
+    <?= 'Book / Book Chapters' ?>
+@endsection
 
 @section('content')
 

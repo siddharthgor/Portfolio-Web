@@ -22,7 +22,9 @@ use App\Http\Controllers\AcademicPerformanceController;
 use App\Http\Controllers\BookChapterController;
 use App\Http\Controllers\ConferencePaperController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JournalPapersController;
+use App\Http\Controllers\PatentController;
 use App\Http\Controllers\Workshops_Conference_Controller;
 
 Route::get('admin', [CustomAuthController::class, 'showLoginForm'])->name('admin.login');
@@ -30,9 +32,7 @@ Route::post('admin/login', [CustomAuthController::class, 'login']);
 
 // Routes that require authentication
 Route::middleware('admin')->group(function () {
-    Route::get('admin/home', function () {
-        return view('admin.home');
-    })->name('admin.home');
+    Route::get('admin/home', [HomeController::class, 'index'])->name('admin.home');
     //academic_performance routes
 
     Route::get('admin/academic_performance', [AcademicPerformanceController::class, 'index'])->name('admin.academic_performance.index');
@@ -73,4 +73,11 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/papers/books_chapters/list', [BookChapterController::class, 'list'])->name('books_chapters.list');
     Route::get('admin/papers/books_chapters/create', [BookChapterController::class, 'create'])->name('books_chapters.create');
     Route::post('admin/papers/books_chapters/store', [BookChapterController::class, 'store'])->name('books_chapters.store');
+
+    //patents
+
+    Route::get('admin/patents', [PatentController::class, 'index'])->name('patents.index');
+    Route::get('admin/patents/list', [PatentController::class, 'list'])->name('patents.list');
+    Route::get('admin/patents/create', [PatentController::class, 'create'])->name('patents.create');
+    Route::post('admin/patents/store', [PatentController::class, 'store'])->name('patents.store');
 });

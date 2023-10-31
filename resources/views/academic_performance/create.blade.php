@@ -1,7 +1,9 @@
 <!-- resources/views/academic_performance/create.blade.php -->
 @extends('admin.layout')
+@section('title')
+    <?= 'Academic Performance' ?>
+@endsection
 
-@section('content')
 
 @section('content')
     <div class="container-fluid flex-grow-1 container-p-y">

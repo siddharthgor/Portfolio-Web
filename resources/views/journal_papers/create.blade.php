@@ -1,7 +1,7 @@
 @extends('admin.layout')
-
-@section('content')
-
+@section('title')
+    <?= 'Journal Papers' ?>
+@endsection
 @section('content')
     <div class="container-fluid flex-grow-1 container-p-y">
         <div class="row">

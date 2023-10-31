@@ -1,4 +1,8 @@
 @extends('admin.home')
+@section('title')
+    <?= 'Experience' ?>
+@endsection
+
 @section('content')
     <div class="container-fluid flex-grow-1 container-p-y">
         <div class="row">

@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('title')
-    <?= 'Conference Papers' ?>
+    <?= 'Patents Submitted / Published' ?>
 @endsection
 
 @section('content')
@@ -11,35 +11,33 @@
             <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
                     <div class="card-header badge bg-label-info">
-                        <h4>Conference Papers</h4>
+                        <h4>Patents </h4>
                     </div>
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
                             <div class="card-body">
                                 <div class="text-dark">
-                                    <form action="{{ route('conference_papers.store') }}" method="POST">
+                                    <form action="{{ route('patents.store') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label for="title">Title:</label>
                                             <input type="text" name="title" class="form-control" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="year">Date:</label>
-                                            <input type="date" name="date" class="form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="impact_factor">Authors:</label>
+                                            <label for="title">Authors:</label>
                                             <input type="text" name="authors" class="form-control" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="impact_factor">Publisher:</label>
+                                            <label for="year">date:</label>
+                                            <input type="date" name="date" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="publisher">Publisher:</label>
                                             <input type="text" name="publisher" class="form-control" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="link">Link:</label>
-                                            <input type="text" name="link" class="form-control" required>
-                                        </div>
-                                        <button type="submit" class="btn mt-2 btn-primary">Submit</button>
+
+                                        <button type="submit" class="btn btn-primary mt-2">Submit</button>
                                     </form>
 
                                 </div>

@@ -1,4 +1,8 @@
 @extends('admin.home')
+@section('title')
+    <?= 'Workshops and Conference' ?>
+@endsection
+
 @section('content')
     <div class="container-fluid flex-grow-1 container-p-y">
         <div class="row">

@@ -1,23 +1,23 @@
 @extends('admin.home')
 @section('title')
-    <?= 'Academic Performance' ?>
+    <?= 'Patents Submitted / Published' ?>
 @endsection
-
 @section('content')
     <div class="container-fluid flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
-                    <div class="card-header badge bg-label-primary">
-                        <h4>Academic Performance</h4>
+                    <div class="card-header badge bg-label-info">
+                        <h4>Patents Submitted / Published</h4>
                     </div>
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <a href="{{ route('academic_performance.create') }}"
-                                        class="btn btn-sm btn-primary float-right mt-3">Add Academic Performance</a>
-                                    <table id="table" data-toggle="table" data-url="/admin/academic_performance/list"
+                                    <a href="{{ route('patents.create') }}"
+                                        class="btn btn-sm btn-primary float-right mt-3">Add
+                                        Patents</a>
+                                    <table id="table" data-toggle="table" data-url="/admin/patents/list"
                                         data-icons-prefix="bx" data-icons="icons" data-loading-template="loadingTemplate"
                                         data-show-refresh="true" data-total-field="total" data-data-field="rows"
                                         data-page-list="[2, 4, 10, All]" data-search="true" data-side-pagination="client"
@@ -26,15 +26,13 @@
                                         <thead>
                                             <tr>
                                                 <th data-sortable="true" data-visible="true" data-field="id">Id</th>
-                                                <th data-visible="true" data-field="degree_title">Degree</th>
-                                                <th data-visible="true"data-field="university">
-                                                    University</th>
-                                                <th data-visible="true"data-field="institution">
-                                                    Institution</th>
                                                 <th data-visible="true" data-field="title">Title</th>
-                                                <th data-visible="true"data-field="year">
-                                                    Year</th>
-                                                <th data-visible="true"data-field="grade">Grade</th>
+                                                <th data-sortable="true" data-visible="true"data-field="authors">
+                                                    Authors </th>
+
+                                                <th data-sortable="true" data-visible="true"data-field="publisher">
+                                                    Publisher </th>
+                                                <th data-sortable="true" data-visible="true"data-field="date">Date</th>
 
                                             </tr>
                                         </thead>
@@ -58,5 +56,17 @@
             function loadingTemplate(message) {
                 return '<i class="bx bx-loader-alt bx-spin bx-flip-vertical" ></i>'
             }
+            $(document).ready(function() {
+                $('#table').bootstrapTable({
+                    responseHandler: function(res) {
+                        // Modify the data to include clickable links
+                        res.rows.forEach(function(row) {
+                            row.link = '<a href="' + row.link + '" target="_blank">' + row.link +
+                                '</a>';
+                        });
+                        return res;
+                    }
+                });
+            });
         </script>
     @endsection

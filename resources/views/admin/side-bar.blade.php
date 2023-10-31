@@ -55,6 +55,13 @@
                 <div>Experience</div>
             </a>
         </li>
+        <li class="menu-item {{ Request::is('admin/patents') || Request::is('admin/patents*') ? 'active' : '' }}">
+            <a href="/admin/patents"
+                class="menu-link {{ Request::is('admin/patents') || Request::is('admin/patents/*') ? 'active' : '' }}">
+                <i class="menu-icon fas fa-clipboard text-warning"></i>
+                <div>Patents Submitted / Published</div>
+            </a>
+        </li>
 
         <li class="menu-item {{ Request::is('admin/papers') || Request::is('admin/papers/*') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -82,6 +89,8 @@
 
             </ul>
         </li>
+
+
 
     </ul>
 
