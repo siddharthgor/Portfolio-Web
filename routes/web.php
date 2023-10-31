@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AcademicPerformanceController;
+use App\Http\Controllers\BookChapterController;
+use App\Http\Controllers\ConferencePaperController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\JournalPapersController;
 use App\Http\Controllers\Workshops_Conference_Controller;
@@ -57,4 +59,18 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/papers/journal_papers/list', [JournalPapersController::class, 'list'])->name('journal_papers.list');
     Route::get('admin/papers/journal_papers/create', [JournalPapersController::class, 'create'])->name('journal_papers.create');
     Route::post('admin/papers/journal_papers/store', [JournalPapersController::class, 'store'])->name('journal_papers.store');
+
+    //conference papers
+
+    Route::get('admin/papers/conference_papers', [ConferencePaperController::class, 'index'])->name('conference_papers.index');
+    Route::get('admin/papers/conference_papers/list', [ConferencePaperController::class, 'list'])->name('conference_papers.list');
+    Route::get('admin/papers/conference_papers/create', [ConferencePaperController::class, 'create'])->name('conference_papers.create');
+    Route::post('admin/papers/conference_papers/store', [ConferencePaperController::class, 'store'])->name('conference_papers.store');
+
+    //book_chapters
+
+    Route::get('admin/papers/books_chapters', [BookChapterController::class, 'index'])->name('books_chapters.index');
+    Route::get('admin/papers/books_chapters/list', [BookChapterController::class, 'list'])->name('books_chapters.list');
+    Route::get('admin/papers/books_chapters/create', [BookChapterController::class, 'create'])->name('books_chapters.create');
+    Route::post('admin/papers/books_chapters/store', [BookChapterController::class, 'store'])->name('books_chapters.store');
 });
